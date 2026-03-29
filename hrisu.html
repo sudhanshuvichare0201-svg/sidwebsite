@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Just For You ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow-x: hidden;
+            text-align: center;
+            color: #333;
+        }
+
+        h1 {
+            margin-top: 60px;
+            font-size: 45px;
+            animation: fadeIn 2s;
+        }
+
+        .buttons {
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 15px 35px;
+            margin: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        .sorry {
+            background: #ff4d6d;
+            color: white;
+        }
+
+        .love {
+            background: #4dabf7;
+            color: white;
+        }
+
+        .message {
+            display: none;
+            margin: 40px auto;
+            width: 70%;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            font-size: 18px;
+            text-align: left;
+            position: relative;
+            animation: fadeIn 1s;
+        }
+
+        .signature {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-weight: bold;
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            font-size: 20px;
+            animation: floatUp 5s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-800px); opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Hey My Future Wife ❤️</h1>
+
+    <div class="buttons">
+        <button class="sorry" onclick="showMessage('sorryMsg')">I'm Really Sorry 😔</button>
+        <button class="love" onclick="showMessage('loveMsg')">I Love You So Much ❤️</button>
+    </div>
+
+    <!-- Sorry Message -->
+    <div id="sorryMsg" class="message">
+        <p>
+           I’m really sorry… I know I messed up and hurt you, and that was never my intention. You’re so important to me, and losing your smile hurts more than anything. I promise I’ll do better, because you deserve the best. I love you❤️.
+
+        </p>
+        <div class="signature">– Tuza Chidka Boka</div>
+    </div>
+
+    <!-- Love Message -->
+    <div id="loveMsg" class="message">
+        <p>
+            I just want you to remember one thing… no matter what happens, my love for you will never change.
+
+            You are my happiness, my peace, and my favorite person in this entire world.
+            Being with you is the best thing that ever happened to me.
+
+            I fall for you more and more every single day.
+            Even when we fight, even when things go wrong… my heart still chooses you.
+
+            I love you endlessly ❤️
+        </p>
+        <div class="signature">– Tuza Chidka Boka</div>
+    </div>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        function showMessage(id) {
+            document.getElementById("sorryMsg").style.display = "none";
+            document.getElementById("loveMsg").style.display = "none";
+            document.getElementById(id).style.display = "block";
+        }
+
+        // Create floating hearts
+        setInterval(() => {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }, 300);
+    </script>
+
+</body>
+</html>
